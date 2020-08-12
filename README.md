@@ -1,10 +1,10 @@
 # Cuisine_Transformation
 Cuisine_Transformation
 
-Data is a property of Complex Systems Lab IIITD hence not available in the repo.
-To tackle the cuisine transformation problem, two different models were used. 
-Word2Vec used to vectorize recipes in the Encoder-Decoder model.
-Scoring Scheme - Output Ingredient gets +1 if its category matches with Input Ingredient. So the score for the recipe becomes the average of the individual score and the final score is the average of recipe scores.
+Data is a property of Complex Systems Lab IIITD hence not available in the repo.<br>
+Word2Vec used to vectorize recipes in the Encoder-Decoder model.<br>
+Scoring Scheme - Output Ingredient gets +1 if its category matches with Input Ingredient. So the score for the recipe becomes the average of the individual score and the final score is the average of recipe scores.<br>
+To tackle the cuisine transformation problem, two different models were used. <br>
 
 1) Encoder-Decoder - Similar to the model used in this paper, a Bi-GRU was used as an encoder while the decoder comprised of 2 GRU's. The initial state of the decoder was set to the final state of the encoder. 
 From the list of ingredients for every recipe, 3 random ingredients were removed and those 3 were put into the output. The cuisine name was also given as input after being one hot enoded. This made the train test data for the project. Different variations of the model were tried like making 3 different decoders for the 3 ingredients to be predicted or adding attention to the encoding layer. Various dropout combinations were tried but all of them gave similar results which were averaging to 25% accuracy according to our scheme with only ~20 unique words being predicted.
